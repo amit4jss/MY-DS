@@ -1,0 +1,35 @@
+//Inserting node at specific position
+
+SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data, int position) 
+{  SinglyLinkedListNode* p,*q,*newNode;
+  newNode=(struct SinglyLinkedListNode*)malloc(sizeof(SinglyLinkedListNode));
+
+int k=0;
+if(!newNode)
+{
+    return head;
+}
+newNode->data=data;
+p=head;
+if(position==1)
+{
+    newNode->next=p;
+    head=newNode;
+}
+else
+{
+    while(p!=NULL&&k<position)
+    {
+        k++;
+        q=p;
+        p=p->next;
+    }
+    q->next=newNode;
+    newNode->next=p;
+
+}
+return head;
+
+
+
+}
