@@ -1,0 +1,18 @@
+bool has_cycle(SinglyLinkedListNode* head) 
+{ SinglyLinkedListNode* head1=head;
+  SinglyLinkedListNode* head2=head;
+  int k=0;
+  while(head1!=NULL&&head2!=NULL&&head1->next!=NULL)
+  {
+      head1=head1->next->next;
+      head2=head2->next;
+      if(head1==head2)
+      {
+          k=1;
+          break;
+
+      }
+
+  }
+  return k;
+}
