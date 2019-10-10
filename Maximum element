@@ -1,0 +1,40 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() 
+{ vector<int> s;
+  vector<int> max;  
+  max.push_back(0);
+int t,q,val;
+cin>>t;
+while(t--)
+{cin>>q;
+if(q==1)
+{ cin>>val;
+  s.push_back(val);
+  if(val>=max.back())
+  {
+      max.push_back(val);
+  }
+}
+else if(q==2)
+  {
+      if(s.back()==max.back())
+      {
+          max.pop_back();
+      }
+      s.pop_back();
+  }
+else
+{
+  cout<<max.back()<<endl;
+}
+
+}
+return 0;
+}
