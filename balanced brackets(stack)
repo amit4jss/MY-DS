@@ -1,0 +1,54 @@
+#include<iostream>
+#include<stack>
+#include<algorithm>
+using namespace std;
+
+string check(string s)
+{stack<char> st;
+for(auto c: s)
+{  switch(c)
+{
+    case '(':
+    case '{':
+    case '[':
+         st.push(c);
+         break;
+    case ')':
+        if(st.empty()||st.top()!='(')
+            {
+                return "NO";
+            }
+            st.pop();
+            break;
+
+    case ']':
+        if(st.empty()||st.top()!='[')
+            {
+                return "NO";
+            }
+            st.pop();
+            break;
+    case '}':
+        if(st.empty()||st.top()!='{')
+            {
+                return "NO";
+            }
+            st.pop();
+            break;
+        
+}
+}
+
+return st.empty() ? "YES":"NO";
+}
+
+int main()
+{ int t;
+string s;
+cin>>t;
+while(t--)
+{ cin>>s;
+ cout<<check(s)<<endl;
+ }
+return 0;
+}
