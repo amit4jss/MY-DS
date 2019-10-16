@@ -1,0 +1,44 @@
+#include <cmath>
+#include <cstdio>
+#include <stack>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() 
+{ int q,t,k;
+ stack<string> stk;
+  string st;
+cin>>q;
+while(q--)
+{ 
+cin>>t;
+if(t==1)
+{   string str;
+    cin>>str;
+    stk.push(st);
+    st+=str;
+}
+else if(t==2)
+{ cin>>k;
+    stk.push(st);
+    st.erase(st.size()-k);
+    
+}
+else if(t==3)
+{ cin>>k;
+     cout<<st[k-1]<<endl; 
+    }
+else
+        {
+            st = stk.top();  
+            stk.pop();
+
+
+}
+}
+
+    
+return 0;
+}
